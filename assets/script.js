@@ -1,23 +1,70 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
+let yourName = "Jack Ersbo" 
 
-// First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
-
-// We'll use these variables to track the counts of each cookie type
+// Global Variables
 let gb = 0      // Ginger bread
 let cc = 0      // Chocolate Chip
 let sugar = 0   // Sugar Sprinkle
+let total = 0   // Total count
 
 // Code to update name display 
 document.getElementById('credit').textContent = `Created by ${yourName}`
 
-// Event listener for clicks on the "+" button for Ginger Bread cookies
+// gb "+" button clicks
 document.getElementById('add-gb').addEventListener('click', function() {
-    // HINT: You can delete this console.log after you no longer need it!
-    console.log('Ginger bread + button was clicked!')
-
-    // TODO: Write the code to be run when the "+" button for "Ginger Bread" is clicked
+    gb++
+    let gbQuantity = document.getElementById('qty-gb')
+    gbQuantity.textContent = `${gb}`
+    total++
+    document.getElementById('qty-total').textContent = `${total}`
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+// gb "-" button clicks
+document.getElementById('minus-gb').addEventListener('click', function(){
+    if(gb > 0){
+        gb--
+        let gbQuantity = document.getElementById('qty-gb')
+        gbQuantity.textContent = `${gb}`
+        total--
+        document.getElementById('qty-total').textContent = `${total}`
+    }
+})
+
+// cc "+" button clicks
+document.getElementById('add-cc').addEventListener('click', function(){
+    cc++
+    let ccQuantity = document.getElementById('qty-cc')
+    ccQuantity.textContent = `${cc}`
+    total++
+    document.getElementById('qty-total').textContent = `${total}`
+})
+
+// cc "-" button clicks
+document.getElementById('minus-cc').addEventListener('click', function(){
+    if(cc > 0){
+        cc--
+        let ccQuantity = document.getElementById('qty-cc')
+        ccQuantity.textContent = `${cc}`
+        total--
+        document.getElementById('qty-total').textContent = `${total}`
+    }
+})
+
+// sugar "+" button clicks
+document.getElementById('add-sugar').addEventListener('click', function(){
+    sugar++
+    let sugarQuantity = document.getElementById('qty-sugar')
+    sugarQuantity.textContent = `${sugar}`
+    total++
+    document.getElementById('qty-total').textContent = `${total}`
+})
+
+// sugar "-" button clicks
+document.getElementById('minus-sugar').addEventListener('click', function(){
+    if(sugar > 0){
+        sugar--
+        let sugarQuantity = document.getElementById('qty-sugar')
+        sugarQuantity.textContent = `${sugar}`
+        total--
+        document.getElementById('qty-total').textContent = `${total}`
+    }
+})
